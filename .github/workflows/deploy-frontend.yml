@@ -40,6 +40,6 @@ jobs:
               cp docker-compose.yml 234-deploylab-frontend/docker-compose.yml
               cd 234-deploylab-frontend
               docker-compose -H ${{ secrets.HOST_SERVER }} down
-              docker-conpose -H ${{ secrets.HOST_SERVER }} pull
+              docker-compose -H ${{ secrets.HOST_SERVER }} pull
               docker-compose -H ${{ secrets.HOST_SERVER }} up -d
 
