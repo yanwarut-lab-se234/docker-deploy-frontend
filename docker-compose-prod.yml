@@ -4,4 +4,3 @@ services:
     image: octopushead/234-deploylab-frontend:latest
     ports:
       - "9999:80"
-      
