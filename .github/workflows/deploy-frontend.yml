@@ -3,6 +3,7 @@ name: Deploy frontend application
   push:
     branches:
       - main
+      - prod
 jobs:
   docker:
     runs-on: ubuntu-latest
@@ -42,4 +43,7 @@ jobs:
               docker-compose -H ${{ secrets.HOST_SERVER }} down
               docker-compose -H ${{ secrets.HOST_SERVER }} pull
               docker-compose -H ${{ secrets.HOST_SERVER }} up -d
+              docker-compose -H ${{ secrets.HOST_SERVER }} -f docker-compose-prod.yml down
+              docker-compose -H ${{ secrets.HOST_SERVER }} -f docker-compose-prod.yml pull
+              docker-compose -H ${{ secrets.HOST_SERVER }} -f docker-compose-prod.yml up -d
 
