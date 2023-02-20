@@ -1,5 +1,5 @@
-name: Deploy frontend application
-on: push
+name: Deploy prod frontend application
+on: [push]
 
 jobs:
   docker:
@@ -34,9 +34,9 @@ jobs:
       -
         name: prepare the docker-compose run
         run: |
-              mkdir 234-deploylab-frontend
-              cp docker-compose-prod.yml 234-deploylab-frontend/docker-compose-prod.yml
-              cd 234-deploylab-frontend
+              mkdir 234-deploylab-frontend-prod
+              cp docker-compose-prod.yml 234-deploylab-frontend-prod/docker-compose-prod.yml
+              cd 234-deploylab-frontend-prod
               docker-compose -H ${{ secrets.HOST_SERVER }} -f docker-compose-prod.yml down
               docker-compose -H ${{ secrets.HOST_SERVER }} -f docker-compose-prod.yml pull
               docker-compose -H ${{ secrets.HOST_SERVER }} -f docker-compose-prod.yml up -d
