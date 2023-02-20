@@ -34,7 +34,6 @@ jobs:
           context: .
           push: true
           tags: octopushead/234-deploylab-frontend:latest
-     
       -
         name: prepare the docker-compose run
         run: |
