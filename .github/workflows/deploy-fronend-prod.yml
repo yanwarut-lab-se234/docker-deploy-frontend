@@ -2,8 +2,10 @@ name: Deploy frontend application
 'on':
   push:
     branches:
-      - main
       - prod
+    tags: 
+      - v.02
+      - v.01
 
 jobs:
   docker:
