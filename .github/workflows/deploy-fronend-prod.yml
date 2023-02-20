@@ -1,5 +1,5 @@
 name: Deploy frontend application
-'on': [push]
+on: [push]
 
 jobs:
   docker:
