@@ -2,6 +2,9 @@ name: Deploy frontend application
 'on':
   push:
     branches:
+      - prod
+  pull_request:
+    branches:
       - main
 
 jobs:
